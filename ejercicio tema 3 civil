@@ -1,0 +1,157 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyM7CdTPfM9k/U+0rvchw1ka",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/MauricioSIuuuuu/EJERCICIO-TEMA-3/blob/jijijijiji/ejercicio%20tema%203%20civil\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "CpgtUwALXAh_"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## Ejercicio 3 Construcción de Ventanas\n",
+        "\n",
+        "[UN SIMPLE PROBLEMA: CONSTRUCCION DE VENTANAS ](https://docs.google.com/document/d/15DZ-QVMJnQAoL38Ln7DRBa-as9Z4M5R0/edit?usp=sharing&ouid=115090580121117021820&rtpof=true&sd=true)\n",
+        "\n",
+        "##**UN SIMPLE PROBLEMA: CONSTRUCCION DE VENTANAS**\n",
+        "Rob Miles CSharp Yellow Book 2012 © Rob Miles 2011 Department of Computer Science, The University of Hull.\n",
+        "\n",
+        "**PLANTEAMIENTO DEL PROBLEMA**. Se requiere desarrollar un aplicativo que calcule los costos de materiales de un fabricante de ventanas. El fabricante desea ingresar las dimensiones de la ventana a fabricar, en metros, y a partir de allí el aplicativo deberá generar una salida de los costos para fabricar la ventana en términos de la cantidad de madera y vidrio necesario. El fabricante compra la madera en pies de longitud (1 m=3.25”). El programa deberá dar la longitud de la madera necesaria en pies de longitud.\n",
+        "\n",
+        "**PROBANDO EL PROGRAMA**. Si deseo una ventana de 2 metros de alto y 1 metro de ancho, el programa debería decirme que necesito 4 metros cuadrados de vidrio y 19.5 pies de madera.\n",
+        "\n",
+        "**PONIENDO MAS DETALLES**\n",
+        "El fabricante desea que el programa controle las siguientes restricciones:\n",
+        "\n",
+        "1. El área del vidrio requerido para la ventana debe ser en metros cuadrados.\n",
+        "2. Las ventanas son de doble vidrio, de modo que cada ventana requiere dos láminas.\n",
+        "3. La longitud de la madera requerida para el marco debe ser dada en pies.\n"
+      ],
+      "metadata": {
+        "id": "EI4FrVBKJfEs"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# prompt: escribe codigo de Phyton que resuelva el ejercicio: \"UN SIMPLE PROBLEMA: CONSTRUCCION DE VENTANAS\" , por favor no uses funciones predefinidas por el usuario\n",
+        "\n",
+        "# Solicitar al usuario las dimensiones de la ventana\n",
+        "alto = float(input(\"Ingrese la altura de la ventana en metros: \"))\n",
+        "ancho = float(input(\"Ingrese el ancho de la ventana en metros: \"))\n",
+        "\n",
+        "# Calcular el área del vidrio necesario\n",
+        "area_vidrio = alto * ancho * 2  # Doble vidrio\n",
+        "\n",
+        "# Calcular la longitud de madera necesaria (en metros)\n",
+        "perimetro = 2 * (alto + ancho)\n",
+        "# Convertir la longitud de madera a pies\n",
+        "longitud_madera_pies = perimetro * 3.25\n",
+        "\n",
+        "# Mostrar los resultados\n",
+        "print(\"Area de vidrio requerida:\", area_vidrio, \"metros cuadrados\")\n",
+        "print(\"Longitud de madera requerida:\", longitud_madera_pies, \"pies\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yG4pBYeFYuCM",
+        "outputId": "f2bf064d-68f2-4a7b-d0f7-9daea0e539ec"
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese la altura de la ventana en metros: 2\n",
+            "Ingrese el ancho de la ventana en metros: 1\n",
+            "Area de vidrio requerida: 4.0 metros cuadrados\n",
+            "Longitud de madera requerida: 19.5 pies\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# prompt: Porfavor reescribe el codigo anterior utilizando funciones predefinidas por el usuario\n",
+        "\n",
+        "def calcular_area_vidrio(alto, ancho):\n",
+        "  \"\"\"Calcula el área de vidrio necesaria para una ventana de doble vidrio.\"\"\"\n",
+        "  return alto * ancho * 2\n",
+        "\n",
+        "def calcular_longitud_madera(alto, ancho):\n",
+        "  \"\"\"Calcula la longitud de madera necesaria para el marco de la ventana en pies.\"\"\"\n",
+        "  perimetro = 2 * (alto + ancho)\n",
+        "  return perimetro * 3.25\n",
+        "\n",
+        "# Solicitar al usuario las dimensiones de la ventana\n",
+        "alto = float(input(\"Ingrese la altura de la ventana en metros: \"))\n",
+        "ancho = float(input(\"Ingrese el ancho de la ventana en metros: \"))\n",
+        "\n",
+        "# Calcular y mostrar resultados usando las funciones\n",
+        "area_vidrio = calcular_area_vidrio(alto, ancho)\n",
+        "longitud_madera = calcular_longitud_madera(alto, ancho)\n",
+        "\n",
+        "print(\"Area de vidrio requerida:\", area_vidrio, \"metros cuadrados\")\n",
+        "print(\"Longitud de madera requerida:\", longitud_madera, \"pies\")\n"
+      ],
+      "metadata": {
+        "id": "olhGJ7LE1LWl"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## Ejercicio 4 Construcción de Secadores Solares\n",
+        "\n",
+        "[EFICIENCIAS_SECADOR_SOLAR](https://docs.google.com/spreadsheets/d/1HOwH81S8jgQYQj9c3P-vpj0_gpliJlbo/edit?usp=sharing&ouid=115090580121117021820&rtpof=true&sd=true)"
+      ],
+      "metadata": {
+        "id": "CFl1j5SLMXcO"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "g_J7YAV11M3q"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
